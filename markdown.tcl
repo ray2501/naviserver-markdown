@@ -29,7 +29,7 @@ proc ns_markdownfie {args} {
     set infile [open $path]
     set md [read $infile]
     close $infile
-    set data [encoding convertto utf-8 [::Markdown::convert $md]]
+    set data [::Markdown::convert $md]
 
     ns_headers 200 "text/html;charset=utf-8"
     ns_write $data
